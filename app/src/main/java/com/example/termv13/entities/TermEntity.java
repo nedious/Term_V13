@@ -13,10 +13,10 @@ public class TermEntity {
     private int termID;
 
     private String termTitle;
-    private LocalDate startDate;
-    private LocalDate endDate;
+    private String startDate;
+    private String endDate;
 
-    public TermEntity(int termID, String termTitle, LocalDate startDate, LocalDate endDate) {
+    public TermEntity(int termID, String termTitle, String startDate, String endDate) {
         this.termID = termID;
         this.termTitle = termTitle;
         this.startDate = startDate;
@@ -39,19 +39,19 @@ public class TermEntity {
         this.termTitle = termTitle;
     }
 
-    public LocalDate getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public LocalDate getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 }
