@@ -3,34 +3,35 @@ package com.example.termv13.entities;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import java.time.LocalDate;
 
-@Entity(tableName = "course_table")
+@Entity(tableName = "course_Table")
 public class CourseEntity {
 
     @PrimaryKey
     private int courseID;
 
     private String courseTitle;
-    private LocalDate startDate;
-    private LocalDate endDate;
-
+    private String startDate;
+    private String endDate;
     private CourseStatus status;
-
+    private String courseNotes;
     private String instructorName;
     private String instructorPhone;
     private String instructorEmail;
 
+    private int termID;
 
-    public CourseEntity(int courseID, String courseTitle, LocalDate startDate, LocalDate endDate, CourseStatus status, String instructorName, String instructorPhone, String instructorEmail) {
+    public CourseEntity(int courseID, String courseTitle, String startDate, String endDate, CourseStatus status, String courseNotes, String instructorName, String instructorPhone, String instructorEmail, int termID) {
         this.courseID = courseID;
         this.courseTitle = courseTitle;
         this.startDate = startDate;
         this.endDate = endDate;
         this.status = status;
+        this.courseNotes = courseNotes;
         this.instructorName = instructorName;
         this.instructorPhone = instructorPhone;
         this.instructorEmail = instructorEmail;
+        this.termID = termID;
     }
 
     public int getCourseID() {
@@ -49,19 +50,19 @@ public class CourseEntity {
         this.courseTitle = courseTitle;
     }
 
-    public LocalDate getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public LocalDate getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
@@ -71,6 +72,14 @@ public class CourseEntity {
 
     public void setStatus(CourseStatus status) {
         this.status = status;
+    }
+
+    public String getCourseNotes() {
+        return courseNotes;
+    }
+
+    public void setCourseNotes(String courseNotes) {
+        this.courseNotes = courseNotes;
     }
 
     public String getInstructorName() {
@@ -95,5 +104,13 @@ public class CourseEntity {
 
     public void setInstructorEmail(String instructorEmail) {
         this.instructorEmail = instructorEmail;
+    }
+
+    public int getTermID() {
+        return termID;
+    }
+
+    public void setTermID(int termID) {
+        this.termID = termID;
     }
 }

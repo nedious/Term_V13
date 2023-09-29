@@ -80,8 +80,7 @@
                         android:ems="8"
                         android:focusable="false"
                         android:hint="DD/MM/YYYY"
-                        android:inputType="date"
-                        android:onClick="showDatePickerDialog"
+
                         android:tag="term_start_date_edit"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -105,8 +104,7 @@
                         android:layout_height="match_parent"
                         android:focusable="false"
                         android:hint="DD/MM/YYYY"
-                        android:inputType="date"
-                        android:onClick="showDateClickerDialog"
+
                         android:tag="term_end_date_edit"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 

@@ -1,5 +1,7 @@
 package com.example.termv13.UI;
 
+import static com.example.termv13.entities.CourseStatus.IN_PROGRESS;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,9 +13,16 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.termv13.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.example.termv13.database.Repository;
+import com.example.termv13.entities.CourseEntity;
+import com.example.termv13.entities.TermEntity;
+
+import java.time.LocalDate;
 
 public class ActivityTermList extends AppCompatActivity {
+
+    private Repository repository;
+
 
     /*
      * Method onCreate, initializes activity UI
@@ -54,7 +63,23 @@ public class ActivityTermList extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.mysample) {
-            Toast.makeText(ActivityTermList.this, "put in sample data", Toast.LENGTH_LONG).show();
+            repository=new Repository(getApplication());
+
+            Toast.makeText(ActivityTermList.this, "sample data added to database", Toast.LENGTH_LONG).show();
+
+            // term data for repository
+            TermEntity term = new TermEntity(1,"Term 1", "10/1/2023", "4/1/2024");
+            repository.insert(term);
+
+            term = new TermEntity(1,"Term 2", "10/1/2023", "4/1/2024");
+            repository.insert(term);
+
+            // course data for repository
+            CourseEntity course = new CourseEntity(1, "History", "10/1/2023", "4/1/2024", IN_PROGRESS, "US History", "Mr. History", "1234567890", "history@email.com", 1);
+            repository.insert(course);
+
+            course = new CourseEntity(2, "Economics", "10/1/2023", "4/1/2024", IN_PROGRESS, "US Economics", "Mr. Econ", "01234567890", "econ@email.com", 1);
+            repository.insert(course);
 
             return true;
         }
