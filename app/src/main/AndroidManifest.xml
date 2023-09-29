@@ -15,9 +15,12 @@
         <activity
             android:name=".UI.ActivityTermDetail"
             android:label="Term Detail and Course List"
+            android:parentActivityName=".UI.ActivityTermList"
             android:exported="false" />
         <activity
             android:name=".UI.ActivityCourseList"
+            android:label="Course List"
+            android:parentActivityName="UI.ActivityTermList"
             android:exported="false" />
         <activity
             android:name=".UI.ActivityTermList"
