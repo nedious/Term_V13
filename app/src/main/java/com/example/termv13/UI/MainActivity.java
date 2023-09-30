@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.termv13.R;
+import com.example.termv13.UI.Term.ActivityTermList;
 
 public class MainActivity extends AppCompatActivity {
 

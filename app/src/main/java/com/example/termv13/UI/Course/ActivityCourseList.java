@@ -1,4 +1,4 @@
-package com.example.termv13.UI;
+package com.example.termv13.UI.Course;
 
 import androidx.appcompat.app.AppCompatActivity;
 

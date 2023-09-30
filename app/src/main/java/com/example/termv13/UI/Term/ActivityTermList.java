@@ -1,4 +1,4 @@
-package com.example.termv13.UI;
+package com.example.termv13.UI.Term;
 
 import static com.example.termv13.entities.CourseStatus.IN_PROGRESS;
 
@@ -12,14 +12,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.termv13.R;
 import com.example.termv13.database.Repository;
 import com.example.termv13.entities.CourseEntity;
 import com.example.termv13.entities.TermEntity;
 
-import java.time.LocalDate;
 import java.util.List;
 
 public class ActivityTermList extends AppCompatActivity {

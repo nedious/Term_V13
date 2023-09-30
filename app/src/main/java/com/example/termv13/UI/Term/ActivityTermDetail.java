@@ -1,4 +1,4 @@
-package com.example.termv13.UI;
+package com.example.termv13.UI.Term;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
