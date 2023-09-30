@@ -3,6 +3,8 @@ package com.example.termv13.UI;
 import static com.example.termv13.entities.CourseStatus.IN_PROGRESS;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,6 +20,7 @@ import com.example.termv13.entities.CourseEntity;
 import com.example.termv13.entities.TermEntity;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class ActivityTermList extends AppCompatActivity {
 
@@ -43,8 +46,28 @@ public class ActivityTermList extends AppCompatActivity {
             }
         });
 
+        RecyclerView recyclerView = findViewById(R.id.term_recyclerview);
+
+        repository= new Repository(getApplication()); // makes new repository
+
+        List<TermEntity> allTerms = repository.getAllTerms(); // gets all terms from repository
+
+
+
+        final ActivityTermAdapter termAdapter = new ActivityTermAdapter(this); // call recycling adapter we just made
+
+        recyclerView.setAdapter(termAdapter); // associating the recycler and adapter views
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this)); //linear layout - required for recycler view
+
+
+        termAdapter.setTerms(allTerms); // list of terms . Method used from ActivityTermAdapter.java
+//        termAdapter.setCourses(Repository.getAllCourses());
+
         System.out.println(getIntent().getStringExtra("test"));
     }
+
+
 
 /*
 * Method onCreateOptionsMenu, generates drop down menu from snowman in top right corner
@@ -65,13 +88,13 @@ public class ActivityTermList extends AppCompatActivity {
         if (item.getItemId() == R.id.mysample) {
             repository=new Repository(getApplication());
 
-            Toast.makeText(ActivityTermList.this, "sample data added to database", Toast.LENGTH_LONG).show();
+//            Toast.makeText(ActivityTermList.this, "sample data added to database", Toast.LENGTH_LONG).show();
 
             // term data for repository
             TermEntity term = new TermEntity(1,"Term 1", "10/1/2023", "4/1/2024");
             repository.insert(term);
 
-            term = new TermEntity(1,"Term 2", "10/1/2023", "4/1/2024");
+            term = new TermEntity(2,"Term 2", "10/1/2023", "4/1/2024");
             repository.insert(term);
 
             // course data for repository
