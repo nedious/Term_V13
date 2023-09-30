@@ -12,7 +12,7 @@ import com.example.termv13.entities.CourseEntity;
 import com.example.termv13.entities.TermEntity;
 
 
-@Database(entities = {TermEntity.class, CourseEntity.class}, version= 1,exportSchema = false)
+@Database(entities = {TermEntity.class, CourseEntity.class}, version= 2,exportSchema = false)
 // if you want to empty the database, you can increment to version = 2, etc
 
 public abstract class DatabaseBuilder extends RoomDatabase {

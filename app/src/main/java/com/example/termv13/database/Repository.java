@@ -90,7 +90,7 @@ public class Repository {
 
     // ------------------- Course ------------------//
 
-    public List<CourseEntity> getmAllCourses() {
+    public List<CourseEntity> getAllCourses() {
         databaseExecutor.execute(() -> {
             mAllTerms = mTermDao.getAllTerms();
         });
